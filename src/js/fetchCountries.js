@@ -1,12 +1,15 @@
 import refs from './refs';
+import countriesTpl from '../templates/countries.hbs';
 
 function fetchCountries(searchQuery) {
-  const url = `https://restcountries.eu/rest/v2/name/Estonia`;
+  const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`;
 
-  fetch(url)
+  return fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(country => {
+      const markup = countriesTpl(country);
+      refs.countriesContainerRef.insertAdjacentHTML('beforeend', markup);
+    });
 }
 
-refs.searchCounrtyBtnRef.addEventListener('click', fetchCountries);
 export default fetchCountries;
