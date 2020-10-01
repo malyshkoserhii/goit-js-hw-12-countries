@@ -12,6 +12,15 @@ function countryInput() {
 
   const searchQuery = refs.inputCountryRef.value;
 
+  // console.log(searchQuery);
+  // fetchCountries(searchQuery)
+  //   .then(data => console.log(data))
+  //   .catch(error => console.log(error))
+  //   .finally(() => {
+  //     updateCountriesMarkup;
+  //   });
+
   console.log(searchQuery);
+  fetchCountries(searchQuery).then(data => console.log(data.length));
   fetchCountries(searchQuery).then(updateCountriesMarkup);
 }
