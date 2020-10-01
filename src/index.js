@@ -1,12 +1,17 @@
 import updateCountriesMarkup from './js/countries-markup';
-
 import fetchCountries from './js/fetchCountries';
 import refs from './js/refs';
 import './styles.css';
 
-refs.searchCounrtyBtnRef.addEventListener('click', event => {
+const debauncedInput = _.debounce(countryInput, 500);
+
+refs.inputCountryRef.addEventListener('input', debauncedInput);
+
+function countryInput() {
+  refs.countriesContainerRef.innerHTML = '';
+
   const searchQuery = refs.inputCountryRef.value;
 
-  fetchCountries(searchQuery);
-  //   updateCountriesMarkup();
-});
+  console.log(searchQuery);
+  fetchCountries(searchQuery).then(updateCountriesMarkup);
+}
