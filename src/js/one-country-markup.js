@@ -1,9 +1,9 @@
 import refs from './refs';
 import oneCountryTpl from '../templates/one-country.hbs';
 
-function updateCountriesMarkup(country) {
+function updateOneCountryMarkup(country) {
   const markup = oneCountryTpl(country);
   refs.countriesContainerRef.insertAdjacentHTML('beforeend', markup);
 }
 
-export default updateCountriesMarkup;
+export default updateOneCountryMarkup;

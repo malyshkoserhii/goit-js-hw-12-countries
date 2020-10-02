@@ -1,4 +1,10 @@
-import updateCountriesMarkup from './js/countries-markup';
+import { notice, defaultModules } from '@pnotify/core';
+import * as PNotifyConfirm from '@pnotify/confirm';
+import { defaultModules } from '@pnotify/core';
+import * as PNotifyBootstrap4 from '@pnotify/bootstrap4';
+
+import updateSomeCountriesMarkup from './js/some-contries-markup';
+import updateOneCountryMarkup from './js/one-country-markup';
 import fetchCountries from './js/fetchCountries';
 import refs from './js/refs';
 import './styles.css';
@@ -12,15 +18,12 @@ function countryInput() {
 
   const searchQuery = refs.inputCountryRef.value;
 
-  // console.log(searchQuery);
-  // fetchCountries(searchQuery)
-  //   .then(data => console.log(data))
-  //   .catch(error => console.log(error))
-  //   .finally(() => {
-  //     updateCountriesMarkup;
-  //   });
-
-  console.log(searchQuery);
-  fetchCountries(searchQuery).then(data => console.log(data.length));
-  fetchCountries(searchQuery).then(updateCountriesMarkup);
+  fetchCountries(searchQuery).then(country => {
+    if (country.length === 1) {
+      updateOneCountryMarkup(country);
+    }
+    if (country.length > 1) {
+      updateSomeCountriesMarkup(country);
+    }
+  });
 }
