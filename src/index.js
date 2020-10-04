@@ -6,7 +6,7 @@ import updateSomeCountriesMarkup from './js/some-contries-markup';
 import updateOneCountryMarkup from './js/one-country-markup';
 import fetchCountries from './js/fetchCountries';
 import refs from './js/refs';
-import './styles.css';
+import './styles.scss';
 
 const debauncedInput = _.debounce(countryInput, 500);
 
@@ -27,16 +27,18 @@ function countryInput() {
       success({
         text: 'Your query is successful!',
         hide: true,
-        delay: 2000,
+        delay: 4000,
+        width: '280px',
       });
     }
     if (country.length > 1) {
       updateSomeCountriesMarkup(country);
 
       error({
-        text: 'Too many matches found. Please enter a more specific query!',
+        text: 'Please enter a more specific query!',
         hide: true,
-        delay: 2000,
+        delay: 4000,
+        width: '280px',
       });
     }
   });

@@ -1,0 +1,130 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.country-input-wrapper {
+  padding-top: 130px;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    margin-bottom: 35px;
+  }
+}
+
+.country-input {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  outline: none;
+  border: 2px solid burlywood;
+  border-radius: 6px;
+  padding-left: 10px;
+  font-style: italic;
+
+  &::placeholder {
+    font-style: italic;
+  }
+}
+
+.countries-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 280px;
+  display: block;
+}
+
+.countries-list__item {
+  &-name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 22px;
+      line-height: 24px;
+      margin-bottom: 14px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 26px;
+      line-height: 28px;
+    }
+  }
+
+  &-flag {
+    margin: 0 0 16px 0;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 24x;
+    }
+  }
+
+  &-info {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 18px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+
+  &-info > span {
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+
+.countries-list__item-languages {
+  list-style: square;
+
+  &-item {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
