@@ -1,10 +1,11 @@
 {{#each this}}
-<li class="col countries-list__item">
+<li class="countries-list__item">
     <h2 class="countries-list__item-name">{{name}}</h2>
-    <img src="{{flag}}" alt="flag" width="320" class="countries-list__item-flag">
-    <p class="countries-list__item-info"><span>Capital: </span>{{capital}}</p>
-    <p class="countries-list__item-info"><span>Population: </span>{{population}}</p>
-    <p class="countries-list__item-info"><span>Languages:</p>
+    <img src="{{flag}}" alt="flag" width="240" class="countries-list__item-flag">
+    <p class="countries-list__item-info"><span class="countries-list__item-info-tag">Capital: </span>{{capital}}</p>
+    <p class="countries-list__item-info"><span class="countries-list__item-info-tag">Population: </span>{{population}}
+    </p>
+    <p class="countries-list__item-info"><span class="countries-list__item-info-tag">Languages:</p>
     <ul class="countries-list__item-languages">
         {{#each languages}}
         <li>
