@@ -1,14 +1,14 @@
 {{#each this}}
-<li>
-    <h2>{{name}}</h2>
-    <img src="{{flag}}" alt="flag" width="320">
-    <p><span>Capital: </span>{{capital}}</p>
-    <p><span>Population: </span>{{population}}</p>
-    <p><span>Languages:</p>
-    <ul>
+<li class="col countries-list__item">
+    <h2 class="countries-list__item-name">{{name}}</h2>
+    <img src="{{flag}}" alt="flag" width="320" class="countries-list__item-flag">
+    <p class="countries-list__item-info"><span>Capital: </span>{{capital}}</p>
+    <p class="countries-list__item-info"><span>Population: </span>{{population}}</p>
+    <p class="countries-list__item-info"><span>Languages:</p>
+    <ul class="countries-list__item-languages">
         {{#each languages}}
         <li>
-            <p>{{name}}</p>
+            <p class="countries-list__item-languages-info">{{name}}</p>
         </li>
         {{/each}}
     </ul>
