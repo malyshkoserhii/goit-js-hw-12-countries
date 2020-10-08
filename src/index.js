@@ -13,10 +13,12 @@ const debauncedInput = _.debounce(countryInput, 500);
 refs.inputCountryRef.addEventListener('input', debauncedInput);
 
 function countryInput() {
-  const searchQuery = refs.inputCountryRef.value;
+  const searchQuery = refs.inputCountryRef.value.trim();
+
+  refs.countriesContainerRef.innerHTML = '';
 
   if (searchQuery === '') {
-    refs.countriesContainerRef.innerHTML = '';
+    return;
   }
 
   fetchCountries(searchQuery)
