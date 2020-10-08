@@ -19,27 +19,29 @@ function countryInput() {
     refs.countriesContainerRef.innerHTML = '';
   }
 
-  fetchCountries(searchQuery).then(country => {
-    if (country.length === 1) {
-      refs.countriesContainerRef.innerHTML = '';
-      updateOneCountryMarkup(country);
+  fetchCountries(searchQuery)
+    .then(country => {
+      if (country.length === 1) {
+        refs.countriesContainerRef.innerHTML = '';
+        updateOneCountryMarkup(country);
 
-      success({
-        text: 'Your query is successful!',
-        hide: true,
-        delay: 4000,
-        width: '280px',
-      });
-    }
-    if (country.length > 1) {
-      updateSomeCountriesMarkup(country);
-
+        success({
+          text: 'Your query is successful!',
+          hide: true,
+          delay: 2000,
+          width: '280px',
+        });
+      }
+      if (country.length > 1) {
+        updateSomeCountriesMarkup(country);
+      }
+    })
+    .catch(
       error({
         text: 'Please enter a more specific query!',
         hide: true,
-        delay: 4000,
+        delay: 2000,
         width: '280px',
-      });
-    }
-  });
+      }),
+    );
 }
